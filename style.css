@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+    background-color: #333;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: black;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Content Section for Index Page */
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Larger intro, smaller sidebar */
+    gap: 20px;
+    padding: 20px;
+    align-items: start;
+}
+
+/* Individual Sections */
+.intro, .sidebar {
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.intro img, .sidebar img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Services Grid Layout (For Consistency) */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.service-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+.service-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Contact Form */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+}
+
+.contact label {
+    margin-top: 10px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content {
+        grid-template-columns: 1fr; /* Stack intro and sidebar */
+    }
+
+    .services {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .content {
+        grid-template-columns: 1fr; /* Stack intro and sidebar */
+    }
+}
